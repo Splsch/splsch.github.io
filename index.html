@@ -1,8 +1,37 @@
 <!DOCTYPE html>
 <html lang=“en”>
 <body>
-Keys: <input type="text" id="Keys">
-
-Entry: <textarea id="Entry"></textarea>
+Keys: <input type="text" id="keys">
+<br><br>
+Entry: <textarea id="entry"></textarea>
+<br><br>
+<button onclick="addKey()">Add</button>
+<br><br>
+<p id="output"></p>
+<script>
+    var keyArray = [];
+    var entryArray = [];
+    function addKey() {
+        //[{"id":"0.2276568571492854","keys":"tamela","entry":"She is a woman with blond hair.\n"},{"id":"0.5095987437175058","keys":"sydney","entry":"She is a woman with red hair.\n"}]
+        var keys = document.getElementById("keys").value;
+        var entry = document.getElementById("entry").value;
+        var msg = "["
+        console.log("hello");
+        if(keys != '' && entry != '') {
+            keyArray.push(keys);
+            entryArray.push(entry);
+            console.log("no");
+            for(var i = 0; i < keyArray.length; i++) {
+                msg += '{"keys:":"' + keyArray[i] + ',"entry":"' + entryArray[i] + '"}';
+                if(i + 1 != keyArray.length) {
+                    msg += ',';
+                } else {
+                    msg += ']';
+                    document.getElementById("output").innerHTML = msg;
+                }
+            }
+        }
+    }
+</script>
 </body>
 </html>
