@@ -22,7 +22,7 @@ Entry: <textarea id="entry"></textarea>
             entryArray.push(entry);
             console.log("no");
             for(var i = 0; i < keyArray.length; i++) {
-                msg += '{"keys:":"' + keyArray[i] + '","entry":"' + entryArray[i] + '"}';
+                msg += '{"keys":"' + keyArray[i] + '","entry":"' + entryArray[i] + '"}';
                 if(i + 1 != keyArray.length) {
                     msg += ',';
                 } else {
